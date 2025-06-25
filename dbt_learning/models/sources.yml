@@ -4,3 +4,4 @@ sources :
     database: SNOWFLAKE_SAMPLE_DATA
     tables :
       - name: customer
+      - name: orders

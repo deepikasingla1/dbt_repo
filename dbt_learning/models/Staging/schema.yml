@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: This table has basic information about a customer
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_orders
+    description: This table has basic information about orders
+    columns:
+      - name: order_id
+        description: This is a unique identifier for a order
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+                
+
+  - name: stg_payments
+    description: This table has basic information about payments
+    columns:
+      - name: payment_id
+        description: This is a unique identifier for a payment
+        tests:
+          - unique
+          - not_null
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['credit_card', 'coupon', 'gift_card', 'bank_transfer']

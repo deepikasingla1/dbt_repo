@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: new_customer
+    description: "A customer dbt model"
+    columns:
+      - name: c_custkey
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null

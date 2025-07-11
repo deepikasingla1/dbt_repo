@@ -1,3 +1,8 @@
+{{ config(
+    materialized='incremental',
+    unique_key='order_id'  
+) }}
+
 with source as(
 
     select * from {{ref('raw_orders')}}

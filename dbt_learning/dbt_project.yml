@@ -35,3 +35,5 @@ models:
     example:
       +materialized: table
       +enabled: true
+    Staging:
+      +materialized: table
